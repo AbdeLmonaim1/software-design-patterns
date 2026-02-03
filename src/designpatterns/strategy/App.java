@@ -1,7 +1,10 @@
 package designpatterns.strategy;
 
+import java.lang.reflect.InvocationTargetException;
+import java.util.Scanner;
+
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
         PaymentContext pctx = new PaymentContext();
 //        pctx.setPaymentStrategy(new CreditCardPayment("1224 5832 2452 5905"));
 //        pctx.pay(1200.00);
@@ -12,6 +15,7 @@ public class App {
         pctx.pay(12499.00);
         pctx.setPaymentStrategy(new CreditCardPayment("1224 5832 2452 5905"));
         pctx.pay(111290.70);
+
 
     }
 }
