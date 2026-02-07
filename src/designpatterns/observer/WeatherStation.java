@@ -22,7 +22,8 @@ public class WeatherStation implements Observable {
     @Override
     public void notifyObservers() {
         for (Observer observer : observerList) {
-            observer.update(temperature);
+//            observer.update(temperature);
+            observer.update(this);
         }
     }
     void setTemperature(float temperature){
