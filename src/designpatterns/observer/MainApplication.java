@@ -20,6 +20,11 @@ public class MainApplication {
                 System.out.println("---------------------------------------------------");
             }
         });
+        observable.subscribe((newTemp) -> {
+            System.out.println("============= From Anonyme object lambda version ============");
+            System.out.println("ResultV2 => "+newTemp*Math.tan(newTemp)+"°C");
+            System.out.println("=============================================================");
+        });
         observable.setTemperature(45.68F);
         observable.unsubscribe(tvObserver);
         observable.setTemperature(54.31F);
