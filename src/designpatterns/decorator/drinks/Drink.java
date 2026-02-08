@@ -1,4 +1,4 @@
-package designpatterns.decorator;
+package designpatterns.decorator.drinks;
 
 public abstract class Drink {
     protected String description;
