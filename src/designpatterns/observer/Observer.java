@@ -1,4 +1,4 @@
-package designpatterns.observer.observerinterfaces;
+package designpatterns.observer;
 
 public interface Observer {
 //    void update(float temperature);

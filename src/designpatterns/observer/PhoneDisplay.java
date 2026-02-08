@@ -1,8 +1,5 @@
 package designpatterns.observer;
 
-import designpatterns.observer.observerinterfaces.Observable;
-import designpatterns.observer.observerinterfaces.Observer;
-
 public class PhoneDisplay implements Observer {
     @Override
     public void update(Observable observable) {

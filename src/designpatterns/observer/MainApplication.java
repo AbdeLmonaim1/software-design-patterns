@@ -1,8 +1,5 @@
 package designpatterns.observer;
 
-import designpatterns.observer.observerinterfaces.Observable;
-import designpatterns.observer.observerinterfaces.Observer;
-
 public class MainApplication {
     public static void main(String[] args) {
         WeatherStation observable = new WeatherStation();

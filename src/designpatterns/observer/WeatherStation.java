@@ -1,8 +1,5 @@
 package designpatterns.observer;
 
-import designpatterns.observer.observerinterfaces.Observable;
-import designpatterns.observer.observerinterfaces.Observer;
-
 import java.util.ArrayList;
 import java.util.List;
 
