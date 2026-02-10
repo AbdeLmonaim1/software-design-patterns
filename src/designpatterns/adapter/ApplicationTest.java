@@ -8,7 +8,8 @@ public class ApplicationTest {
         computer.setVga(new Monitor());
         computer.view("An other message from computer, we have successfully connected to a Monitor");
         VgaHdmiAdapter adapter = new VgaHdmiAdapter();
-        adapter.setHdmi(new TV());
+        //for composition
+//        adapter.setHdmi(new TV());
         computer.setVga(adapter);
         computer.view("We Use An Adapter to connect to TV that using HDMI");
     }
