@@ -1,8 +1,8 @@
 package designpatterns.adapter;
 
-public class VgaHdmiAdapter extends TV implements Vga{
+public class VgaHdmiAdapter implements Vga{
     //Using composition - Object
-//    private Hdmi hdmi;
+    private Hdmi hdmi;
     //Using heritage - Classes
 
     @Override
@@ -10,13 +10,13 @@ public class VgaHdmiAdapter extends TV implements Vga{
         System.out.println("|||||||||| It's Adapter |||||||||");
         byte[] data = message.getBytes();
         //for composition
-//        hdmi.plot(data);
+        hdmi.plot(data);
         //for heritage
-        super.plot(data);
+//        super.plot(data);
         System.out.println("|||||||||||||||||||||||||||||||||");
     }
     //for composition
-//    public void setHdmi(Hdmi hdmi) {
-//        this.hdmi = hdmi;
-//    }
+    public void setHdmi(Hdmi hdmi) {
+        this.hdmi = hdmi;
+    }
 }
