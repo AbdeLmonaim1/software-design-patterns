@@ -44,5 +44,11 @@ public class BankAccountRepositoryImpl implements BankAccountRepository {
     public void deleteById(long id) {
         bankAccountMap.remove(id);
     }
+    public void generateData(){
+        for (int i = 0; i < 20; i++) {
+            //We want to use builder pattern to create bank accounts
+
+        }
+    }
 
 }

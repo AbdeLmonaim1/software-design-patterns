@@ -68,4 +68,32 @@ public class BankAccount {
                 ", status=" + status +
                 '}';
     }
+    //Builder pattern for create BankAccount objects
+    public static class BankAccountBuilder{
+        private BankAccount bankAccount = new BankAccount();
+
+        public BankAccountBuilder accountId(Long id){
+            bankAccount.id = id;
+            return this;
+        }
+        public BankAccountBuilder balence(double balence){
+            bankAccount.balence = balence;
+            return this;
+        }
+        public BankAccountBuilder currency(String currency){
+            bankAccount.currency = currency;
+            return this;
+        }
+        public BankAccountBuilder status(AccountStatus status){
+            bankAccount.status = status;
+            return this;
+        }
+        public BankAccountBuilder type(AccountType type){
+            bankAccount.type = type;
+            return this;
+        }
+        public BankAccount build(){
+            return this.bankAccount;
+        }
+    }
 }
