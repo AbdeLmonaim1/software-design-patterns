@@ -10,7 +10,10 @@ import java.util.function.Predicate;
 public class ApplicationTest {
     public static void main(String[] args) {
         JsonSerializer<BankAccount> bankAccountJsonSerializer = new JsonSerializer<>();
-        BankAccountRepositoryImpl accountRepository = new BankAccountRepositoryImpl();
+        //Instanciation without Singleton pattern - so to avoid new and using singelton we need to add a private constructor to the class
+//        BankAccountRepositoryImpl accountRepository = new BankAccountRepositoryImpl();
+        //Instantiation using Singleton pattern
+        BankAccountRepositoryImpl accountRepository = BankAccountRepositoryImpl.getInstance();
         accountRepository.manipulateData();
         accountRepository.findAll().stream().map(bankAccountJsonSerializer::toJson)
                 .forEach(System.out::println);

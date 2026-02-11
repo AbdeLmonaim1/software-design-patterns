@@ -10,6 +10,16 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class BankAccountRepositoryImpl implements BankAccountRepository {
+    //For implement the Singleton pattern
+    private static final BankAccountRepositoryImpl accountRepositoryImpl;
+    static {
+        System.out.println("----- Singleton instantiation -----");
+        accountRepositoryImpl = new BankAccountRepositoryImpl();
+    }
+    //for avoid the instantiation by using default constructor (new) and use singleton instead
+    private BankAccountRepositoryImpl(){
+
+    }
     Map<Long, BankAccount> bankAccountMap = new HashMap<>();
     private long accountsCount = 0;
     @Override
@@ -57,6 +67,10 @@ public class BankAccountRepositoryImpl implements BankAccountRepository {
                     .build();
             save(account);
         }
+    }
+    //For using the initialized instance in static block to create a Singleton we need this method
+    public static BankAccountRepositoryImpl getInstance(){
+        return accountRepositoryImpl;
     }
 
 }
