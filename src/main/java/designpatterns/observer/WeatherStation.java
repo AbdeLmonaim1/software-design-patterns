@@ -1,0 +1,34 @@
+package designpatterns.observer;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class WeatherStation implements Observable {
+    private List<Observer> observerList = new ArrayList<>();
+    private float temperature;
+    @Override
+    public void subscribe(Observer observer) {
+        observerList.add(observer);
+    }
+
+    @Override
+    public void unsubscribe(Observer observer) {
+        observerList.remove(observer);
+    }
+
+    @Override
+    public void notifyObservers() {
+        for (Observer observer : observerList) {
+//            observer.update(temperature);
+            observer.update(this);
+        }
+    }
+    void setTemperature(float temperature){
+        this.temperature = temperature;
+        notifyObservers();
+    }
+
+    public float getTemperature() {
+        return temperature;
+    }
+}
